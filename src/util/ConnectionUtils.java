@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class ConnectionUtils {
 	private static final String driver = "com.mysql.jdbc.Driver";
-	private static final String url = "jdbc:mysql://localhost:3306/website?useUnicode=true&characterEncoding=UTF8";
+	private static final String url = "jdbc:mysql://192.168.16.54:3306/website?useUnicode=true&characterEncoding=UTF8";
 	private static final String username = "root";
 	private static final String password = "123";
 	private static Connection conn = null;
