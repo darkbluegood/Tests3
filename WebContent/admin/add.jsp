@@ -13,7 +13,7 @@
 			<div class="row">
 				<div class="sidebar col-md-2">
 					<ul>
-						<li><a href="add.jsp">添加新闻</a></li>
+						<li><a href="add.jsp">添加新闻1</a></li>
 						<li><a href="list.jsp">新闻列表</a></li>
 						<li><a href="category.jsp">新闻分类</a></li>
 					</ul>
