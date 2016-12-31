@@ -113,7 +113,6 @@ public class Category {
 			if(stmt != null){
 				try{
 					stmt.close();
-				
 				}catch(Exception e){
 					e.printStackTrace();
 				}

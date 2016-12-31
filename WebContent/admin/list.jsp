@@ -1,7 +1,10 @@
+<%@page import="java.util.ArrayList" %>
+<%@page import="entity.List" %>
 <%@ page language="java" contentType="text/html; charset=utf8"
     pageEncoding="utf8"%>
 <%@ include file="include/header.jsp" %>
 <body>
+
 	<div class="container">
 		<div class="padding">
 			<div class="row">
@@ -24,27 +27,21 @@
 					    </tr>
 					  </thead>
 					  <tbody>
+					  	<%
+							List list = new List();
+							ArrayList<List> arraylist = list.getList();
+							for(List l : arraylist){
+						%>
 					    <tr>
-					      <th scope="row">1</th>
-					      <td>Mark</td>
-					      <td>Otto</td>
-					      <td>@mdo</td>
-					      <td></td>
+					      <th><%= l.getId() %></th>
+					      <td><%= l.getTitle() %></td>
+					      <td><%= l.getFid() %></td>
+					      <td><%= l.getDate() %></td>
+					      <td><%= l.getAuthor() %></td>
 					    </tr>
-					    <tr>
-					      <th scope="row">2</th>
-					      <td>Jacob</td>
-					      <td>Thornton</td>
-					      <td>@fat</td>
-					      <td></td>
-					    </tr>
-					    <tr>
-					      <th scope="row">3</th>
-					      <td>Larry</td>
-					      <td>the Bird</td>
-					      <td>@twitter</td>
-					      <td></td>
-					    </tr>
+					  <%
+					  		}
+					  %>
 					  </tbody>
 					</table>
 				</div>
