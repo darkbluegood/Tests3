@@ -14,6 +14,7 @@ public class List {
 	private int fid;
 	private String date;
 	private String author;
+	private String content;
 	public int getId(){
 		return this.id;
 	}
@@ -44,6 +45,12 @@ public class List {
 	public void setAuthor(String author){
 		this.author = author;
 	}
+	public String getContent(){
+		return this.content;
+	}
+	public void setContent(String content){
+		this.content = content;
+	}
 	public ArrayList<List> getList(){
 		Connection conn = null;
 		String sql = "";
@@ -70,9 +77,26 @@ public class List {
 		return arrayList;
 	}
 	
-	public static void main(String args[]){
-		int [] arrayint = {21,3,4,5,6,2};
-		Arrays.sort(arrayint);
-		System.out.println(Arrays.toString(arrayint));
+	public List getContentsById(String id){
+		Connection connection = null;
+		Statement statement = null;
+		String sql = null;
+		ResultSet resultSet = null;
+		try{
+			connection = ConnectionUtils.getConnection();
+			statement = connection.createStatement();
+			sql = "select * from news_content where cid="+id;
+			resultSet = statement.executeQuery(sql);
+			if(resultSet.next()){
+				List list = new List();
+				list.setContent(resultSet.getString("content"));
+				return list;
+			}else{
+				return null;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
